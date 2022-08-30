@@ -1,3 +1,4 @@
+#! Copyright (c) - 2022 Abdülkadir Çakır
 from abc import abstractmethod
 from unittest import result
 from CommonNet.Point import PointNET
@@ -11,10 +12,10 @@ class NetworkNET:
         self.Points: List[PointNET] = []
         self.Observations: List[ObservationNET] = []
 
-        self.Is2D: bool = Is2D
+        self.Is2D: bool = Is2D #TODO
         self.name: str = name
-        self.NetType: str = NetType
-        self.NumOfParameters: int = NumOfParameters
+        self.NetType: str = NetType 
+        self.NumOfParameters: int = NumOfParameters #Number of parameters to estime per point.
 
     def DegreeOfFreedom(self) -> int:
         return len(self.GetValidObservations())-(len(self.Points) * self.NumOfParameters)
@@ -38,9 +39,8 @@ class NetworkNET:
 
     @abstractmethod
     def Solve(self): raise NotImplementedError
-
-    # Returns number of discarded observations
-    def CheckObservations(self) -> int:
+    
+    def CheckObservations(self):
         # Check  for duplicates
         for i in range(len(self.Observations)):
             obs1 = self.Observations[i]

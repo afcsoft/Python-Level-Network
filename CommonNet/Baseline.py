@@ -1,3 +1,4 @@
+#! Copyright (c) - 2022 Abdülkadir Çakır
 import numpy
 from CommonNet.Point import PointNET
 

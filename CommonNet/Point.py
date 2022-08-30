@@ -1,3 +1,4 @@
+#! Copyright (c) - 2022 Abdülkadir Çakır
 from math import sqrt
 import numpy
 
